@@ -17,7 +17,7 @@
         "laravel/framework": "^12.60.0",
         "laravel/tinker": "^2.9",
         "modules/moon-launch": "*",
-        "moonshine/moonshine": "4.0.9",
+        "moonshine/moonshine": "4.18.1",
         "sweet1s/moonshine-roles-permissions": "^4.0"
     },
     "require-dev": {
