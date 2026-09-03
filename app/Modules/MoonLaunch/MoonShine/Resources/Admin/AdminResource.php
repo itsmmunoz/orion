@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Modules\MoonLaunch\MoonShine\Resources\Admin;
+namespace App\Modules\MoonLaunch\MoonShine\Resources\Admin;
 
-use Modules\MoonLaunch\Models\User;
-use Modules\MoonLaunch\MoonShine\Resources\Admin\Pages\AdminDetailPage;
-use Modules\MoonLaunch\MoonShine\Resources\Admin\Pages\AdminFormPage;
-use Modules\MoonLaunch\MoonShine\Resources\Admin\Pages\AdminIndexPage;
-use Modules\MoonLaunch\Traits\WithProperties;
-use Modules\MoonLaunch\Traits\WithTrashedQuery;
+use App\Modules\MoonLaunch\Models\User;
+use App\Modules\MoonLaunch\MoonShine\Resources\Admin\Pages\AdminDetailPage;
+use App\Modules\MoonLaunch\MoonShine\Resources\Admin\Pages\AdminFormPage;
+use App\Modules\MoonLaunch\MoonShine\Resources\Admin\Pages\AdminIndexPage;
+use App\Modules\MoonLaunch\Traits\WithProperties;
+use App\Modules\MoonLaunch\Traits\WithTrashedQuery;
 use MoonShine\Contracts\Core\PageContract;
 use MoonShine\Laravel\Resources\ModelResource;
 use MoonShine\Support\Attributes\Icon;

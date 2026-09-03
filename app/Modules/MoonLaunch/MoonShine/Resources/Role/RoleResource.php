@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Modules\MoonLaunch\MoonShine\Resources\Role;
+namespace App\Modules\MoonLaunch\MoonShine\Resources\Role;
 
+use App\Modules\MoonLaunch\Models\Role;
+use App\Modules\MoonLaunch\MoonShine\Resources\Role\Pages\RoleDetailPage;
+use App\Modules\MoonLaunch\MoonShine\Resources\Role\Pages\RoleFormPage;
+use App\Modules\MoonLaunch\MoonShine\Resources\Role\Pages\RoleIndexPage;
+use App\Modules\MoonLaunch\Traits\WithProperties;
 use Illuminate\Contracts\Database\Eloquent\Builder;
-use Modules\MoonLaunch\Models\Role;
-use Modules\MoonLaunch\MoonShine\Resources\Role\Pages\RoleDetailPage;
-use Modules\MoonLaunch\MoonShine\Resources\Role\Pages\RoleFormPage;
-use Modules\MoonLaunch\MoonShine\Resources\Role\Pages\RoleIndexPage;
-use Modules\MoonLaunch\Traits\WithProperties;
 use MoonShine\Contracts\Core\PageContract;
 use MoonShine\Laravel\Resources\ModelResource;
 use MoonShine\Support\Attributes\Icon;

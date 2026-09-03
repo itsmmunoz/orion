@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Modules\MoonLaunch\MoonShine\Resources\Role\Pages;
+namespace App\Modules\MoonLaunch\MoonShine\Resources\Role\Pages;
 
-use Modules\MoonLaunch\MoonShine\Resources\Role\RoleResource;
+use App\Modules\MoonLaunch\MoonShine\Resources\Role\RoleResource;
 use MoonShine\Contracts\UI\ComponentContract;
 use MoonShine\Contracts\UI\FieldContract;
 use MoonShine\Laravel\Pages\Crud\DetailPage;

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Modules\MoonLaunch\MoonShine\Resources\Admin\Pages;
+namespace App\Modules\MoonLaunch\MoonShine\Resources\Admin\Pages;
 
-use Modules\MoonLaunch\MoonShine\Resources\Admin\AdminResource;
-use Modules\MoonLaunch\Traits\WithSoftDeletes;
+use App\Modules\MoonLaunch\MoonShine\Resources\Admin\AdminResource;
+use App\Modules\MoonLaunch\Traits\WithSoftDeletes;
 use MoonShine\Contracts\UI\ComponentContract;
 use MoonShine\Contracts\UI\FieldContract;
 use MoonShine\Laravel\Fields\Relationships\BelongsToMany;

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Modules\MoonLaunch\MoonShine\Resources\Role\Pages;
+namespace App\Modules\MoonLaunch\MoonShine\Resources\Role\Pages;
 
+use App\Modules\MoonLaunch\MoonShine\Resources\Role\RoleResource;
 use Illuminate\Validation\Rule;
-use Modules\MoonLaunch\MoonShine\Resources\Role\RoleResource;
 use MoonShine\Contracts\Core\TypeCasts\DataWrapperContract;
 use MoonShine\Contracts\UI\ComponentContract;
 use MoonShine\Contracts\UI\FieldContract;

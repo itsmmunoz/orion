@@ -8,10 +8,10 @@
 
 | Package                     | Version | Description                  |
 | --------------------------- | ------- | ---------------------------- |
-| Laravel                     | v12     | Core PHP framework           |
+| PHP                         | ^8.3    | Runtime                      |
+| Laravel                     | v13     | Core PHP framework           |
 | MoonShine                   | v4      | Admin panel                  |
 | moonshine-roles-permissions | v4      | Roles and permissions system |
-| internachi/modular          | v2      | Modular architecture         |
 
 ## ✨ Key Features
 
@@ -28,7 +28,7 @@
 -   Integrated RBAC (Roles and Permissions) system
 -   Command for automatic permission generation
 
-Permissions are automatically generated using the [`LaunchPermissions`](app-modules/moon-launch/src/Console/Commands/LaunchPermissions.php) command. This command scans the **registered MoonShine resources** and creates the necessary permissions automatically.
+Permissions are automatically generated using the [`LaunchPermissions`](app/Modules/MoonLaunch/Console/Commands/LaunchPermissions.php) command. This command scans the **registered MoonShine resources** and creates the necessary permissions automatically.
 
 ### 🎨 Interface
 
@@ -53,7 +53,7 @@ Permissions are automatically generated using the [`LaunchPermissions`](app-modu
 
 3. Run the installer:
     ```bash
-    php artisan launch:install
+    vendor/bin/sail artisan launch:install
     ```
 
     The installer will automatically:
@@ -64,7 +64,7 @@ Permissions are automatically generated using the [`LaunchPermissions`](app-modu
 
 4. Set up Laravel Boost:
     ```bash
-    php artisan boost:install
+    vendor/bin/sail artisan boost:install
     ```
 
     The installer will auto-detect your IDE and generate the appropriate configuration files and agent guidelines.
@@ -75,4 +75,3 @@ Permissions are automatically generated using the [`LaunchPermissions`](app-modu
 
 -   [moonshine](https://moonshine-laravel.com/docs)
 -   [moonshine-roles-permissions](https://github.com/SWEET1S/moonshine-roles-permissions/)
--   [modular](https://github.com/InterNACHI/modular)

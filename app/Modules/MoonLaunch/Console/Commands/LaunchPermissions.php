@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\MoonLaunch\Console\Commands;
+namespace App\Modules\MoonLaunch\Console\Commands;
 
 use Illuminate\Console\Command;
 use MoonShine\Contracts\Core\DependencyInjection\CoreContract;

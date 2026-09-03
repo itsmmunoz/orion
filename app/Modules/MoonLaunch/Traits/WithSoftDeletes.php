@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\MoonLaunch\Traits;
+namespace App\Modules\MoonLaunch\Traits;
 
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use MoonShine\Contracts\Core\DependencyInjection\CrudRequestContract;

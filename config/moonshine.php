@@ -1,15 +1,15 @@
 <?php
 
+use App\Modules\MoonLaunch\Models\User;
 use App\MoonShine\Layouts\MoonShineLayout;
 use App\MoonShine\Pages\Dashboard;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
-use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use Modules\MoonLaunch\Models\User;
 use MoonShine\ColorManager\Palettes\CyanPalette;
 use MoonShine\Crud\Forms\FiltersForm;
 use MoonShine\Crud\Forms\LoginForm;
@@ -47,7 +47,7 @@ return [
         StartSession::class,
         AuthenticateSession::class,
         ShareErrorsFromSession::class,
-        VerifyCsrfToken::class,
+        PreventRequestForgery::class,
         SubstituteBindings::class,
         ChangeLocale::class,
     ],

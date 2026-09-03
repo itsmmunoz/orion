@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Pages;
 
+use App\Modules\MoonLaunch\Models\Role;
+use App\Modules\MoonLaunch\Models\User;
 use Composer\InstalledVersions;
 use MoonShine\Contracts\UI\ComponentContract;
 use MoonShine\Laravel\Pages\Page;
+use MoonShine\UI\Components\Layout\Box;
 use MoonShine\UI\Components\Layout\Grid;
 use MoonShine\UI\Components\Metrics\Wrapped\ValueMetric;
 
@@ -29,7 +32,9 @@ class Dashboard extends Page
 
     private function version(string $pkg): string
     {
-        return InstalledVersions::getPrettyVersion($pkg);
+        return InstalledVersions::isInstalled($pkg)
+            ? (InstalledVersions::getPrettyVersion($pkg) ?? '—')
+            : '—';
     }
 
     /**
@@ -38,31 +43,37 @@ class Dashboard extends Page
     protected function components(): iterable
     {
         return [
-            Grid::make([
-                ValueMetric::make('PHP')
-                    ->value(fn () => PHP_VERSION)
-                    ->columnSpan(4)
-                    ->icon('s.cube'),
+            Box::make([
+                Grid::make([
+                    ValueMetric::make('Admins')
+                        ->value(fn (): int => User::count())
+                        ->columnSpan(6)
+                        ->icon('s.users'),
 
-                ValueMetric::make('Laravel')
-                    ->value(fn () => $this->version('laravel/framework'))
-                    ->columnSpan(4)
-                    ->icon('s.cube'),
+                    ValueMetric::make('Roles')
+                        ->value(fn (): int => Role::count())
+                        ->columnSpan(6)
+                        ->icon('s.shield-check'),
+                    ValueMetric::make('PHP')
+                        ->value(fn (): string => PHP_VERSION)
+                        ->columnSpan(3)
+                        ->icon('s.code-bracket'),
 
-                ValueMetric::make('Modular')
-                    ->value(fn () => $this->version('internachi/modular'))
-                    ->columnSpan(4)
-                    ->icon('s.cube'),
+                    ValueMetric::make('Laravel')
+                        ->value(fn (): string => $this->version('laravel/framework'))
+                        ->columnSpan(3)
+                        ->icon('s.cube'),
 
-                ValueMetric::make('MoonShine')
-                    ->value(fn () => $this->version('moonshine/moonshine'))
-                    ->columnSpan(4)
-                    ->icon('s.cube'),
+                    ValueMetric::make('MoonShine')
+                        ->value(fn (): string => $this->version('moonshine/moonshine'))
+                        ->columnSpan(3)
+                        ->icon('s.sparkles'),
 
-                ValueMetric::make('Roles & Permissions')
-                    ->value(fn () => $this->version('sweet1s/moonshine-roles-permissions'))
-                    ->columnSpan(4)
-                    ->icon('s.cube'),
+                    ValueMetric::make('Roles & Permissions')
+                        ->value(fn (): string => $this->version('sweet1s/moonshine-roles-permissions'))
+                        ->columnSpan(3)
+                        ->icon('s.shield-check'),
+                ]),
             ]),
         ];
     }

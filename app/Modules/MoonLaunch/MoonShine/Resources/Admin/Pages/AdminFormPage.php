@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Modules\MoonLaunch\MoonShine\Resources\Admin\Pages;
+namespace App\Modules\MoonLaunch\MoonShine\Resources\Admin\Pages;
 
+use App\Modules\MoonLaunch\MoonShine\Resources\Admin\AdminResource;
 use Illuminate\Validation\Rule;
-use Modules\MoonLaunch\MoonShine\Resources\Admin\AdminResource;
 use MoonShine\Contracts\Core\TypeCasts\DataWrapperContract;
 use MoonShine\Contracts\UI\ComponentContract;
 use MoonShine\Contracts\UI\FieldContract;
