@@ -35,10 +35,6 @@ return [
         'roles_permissions' => 'Roles & Permissions',
         'overview' => 'Overview',
         'stack' => 'Stack',
-        'logs' => 'Application logs',
-        'date' => 'Date',
-        'level' => 'Level',
-        'message' => 'Message',
     ],
 
 ];

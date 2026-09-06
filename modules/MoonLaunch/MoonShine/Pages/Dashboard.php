@@ -9,7 +9,6 @@ use Modules\MoonLaunch\Models\Role;
 use Modules\MoonLaunch\Models\User;
 use MoonShine\Contracts\UI\ComponentContract;
 use MoonShine\Laravel\Pages\Page;
-use MoonShine\Support\Enums\Color;
 use MoonShine\UI\Components\Layout\Box;
 use MoonShine\UI\Components\Layout\Grid;
 use MoonShine\UI\Components\Metrics\Wrapped\ValueMetric;
@@ -89,35 +88,6 @@ class Dashboard extends Page
     }
 
     /**
-     * @return list<array{date: string, level: string, message: string}>
-     */
-    private function logs(int $limit = 10): array
-    {
-        $files = glob(storage_path('logs/laravel*.log')) ?: [];
-
-        if ($files === []) {
-            return [];
-        }
-
-        $path = collect($files)->sortByDesc(fn (string $file): int => filemtime($file))->first();
-
-        $entries = collect(file($path, FILE_IGNORE_NEW_LINES))
-            ->map(fn (string $line): ?array => preg_match(
-                '/^\[(.+?)\] \w+\.(DEBUG|INFO|NOTICE|WARNING|ERROR|CRITICAL|ALERT|EMERGENCY): (.+)$/',
-                $line,
-                $matches,
-            )
-                ? ['date' => $matches[1], 'level' => $matches[2], 'message' => explode(' {', $matches[3])[0]]
-                : null)
-            ->filter()
-            ->take(-$limit)
-            ->values()
-            ->all();
-
-        return $entries;
-    }
-
-    /**
      * @return list<ComponentContract>
      */
     protected function components(): iterable
@@ -140,18 +110,6 @@ class Dashboard extends Page
 
             Box::make(__('moon-launch::ui.dashboard.stack'), [
                 Grid::make($this->systemMetrics()),
-            ]),
-
-            Box::make(__('moon-launch::ui.dashboard.logs'), [
-                TableBuilder::make(
-                    [
-                        Text::make(__('moon-launch::ui.dashboard.date'), 'date'),
-                        Text::make(__('moon-launch::ui.dashboard.level'), 'level')
-                            ->badge(fn (mixed $value): Color => $value === 'ERROR' ? Color::RED : Color::GRAY),
-                        Text::make(__('moon-launch::ui.dashboard.message'), 'message')->prettyLimit(limit: 100),
-                    ],
-                    $this->logs(),
-                ),
             ]),
         ];
     }
