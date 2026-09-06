@@ -1,0 +1,44 @@
+<?php
+
+return [
+    'resource' => [
+        'system' => 'System',
+        'role' => 'Role',
+        'roles' => 'Roles',
+        'permissions' => 'Permissions',
+        'name' => 'Name',
+        'email' => 'Email',
+        'password' => 'Password',
+        'password_repeat' => 'Repeat Password',
+        'avatar' => 'Avatar',
+        'created_at' => 'Created At',
+        'admins_title' => 'Administrators',
+
+        'main_information' => 'Main Information',
+        'change_password' => 'Change Password',
+    ],
+
+    'soft_deletes' => [
+        'trashed' => 'Deleted',
+        'restore' => 'Restore',
+        'force_delete' => 'Delete permanently',
+        'item_deleted' => 'Item deleted',
+        'item_restored' => 'Item restored',
+    ],
+
+    'dashboard' => [
+        'dashboard' => 'Dashboard',
+        'admins' => 'Administrators',
+        'roles' => 'Roles',
+        'permissions' => 'Permissions',
+        'latest_admins' => 'Latest administrators',
+        'roles_permissions' => 'Roles & Permissions',
+        'overview' => 'Overview',
+        'stack' => 'Stack',
+        'logs' => 'Application logs',
+        'date' => 'Date',
+        'level' => 'Level',
+        'message' => 'Message',
+    ],
+
+];

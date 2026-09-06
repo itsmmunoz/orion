@@ -28,7 +28,7 @@
 -   Integrated RBAC (Roles and Permissions) system
 -   Command for automatic permission generation
 
-Permissions are automatically generated using the [`LaunchPermissions`](app/Modules/MoonLaunch/Console/Commands/LaunchPermissions.php) command. This command scans the **registered MoonShine resources** and creates the necessary permissions automatically.
+Permissions are automatically generated using the [`LaunchPermissions`](modules/MoonLaunch/Console/Commands/LaunchPermissions.php) command. This command scans the **registered MoonShine resources** and creates the necessary permissions automatically.
 
 ### 🎨 Interface
 
@@ -53,7 +53,7 @@ Permissions are automatically generated using the [`LaunchPermissions`](app/Modu
 
 3. Run the installer:
     ```bash
-    vendor/bin/sail artisan launch:install
+    php artisan launch:install
     ```
 
     The installer will automatically:
@@ -64,7 +64,7 @@ Permissions are automatically generated using the [`LaunchPermissions`](app/Modu
 
 4. Set up Laravel Boost:
     ```bash
-    vendor/bin/sail artisan boost:install
+    php artisan boost:install
     ```
 
     The installer will auto-detect your IDE and generate the appropriate configuration files and agent guidelines.

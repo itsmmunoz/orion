@@ -1,6 +1,6 @@
 <?php
 
-use App\Modules\MoonLaunch\Models\Role;
+use Modules\MoonLaunch\Models\Role;
 use Spatie\Permission\Models\Permission;
 
 return [

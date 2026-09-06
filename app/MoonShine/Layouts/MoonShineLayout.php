@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Layouts;
 
-use App\MoonShine\Pages\Dashboard;
 use MoonShine\Laravel\Layouts\AppLayout;
-use MoonShine\MenuManager\MenuItem;
 use MoonShine\UI\Components\Layout\Favicon;
 use MoonShine\UI\Components\Layout\Footer;
 use MoonShine\UI\Components\Layout\Layout;
@@ -42,9 +40,7 @@ final class MoonShineLayout extends AppLayout
 
     protected function menu(): array
     {
-        return [
-            MenuItem::make(Dashboard::class)->icon('s.home'),
-        ];
+        return [];
     }
 
     public function build(): Layout
